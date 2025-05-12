@@ -36,11 +36,17 @@ fun HomeScreen(){
     LazyColumn {
         if (state.isEmpty()){
             item {
-                CircularProgressIndicator(
+                Box(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .wrapContentSize(align = Alignment.Center)
-                )
+                        .fillParentMaxSize(),
+                    contentAlignment = Alignment.Center
+                ){
+                    CircularProgressIndicator(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .wrapContentSize(align = Alignment.Center),
+                        )
+                }
             }
         }
 
